@@ -13,19 +13,20 @@ const PetCard = (props) => {
     <div className="card pet-card">
 
       <section className="pet-card--header">
-
       { speciesEmoji(species) } {id} - {name} 
         <button 
+          onClick={() => {props.selectPetCallback(props.id)}} 
           className="btn btn-primary pet-card--select-pet-btn"
           >
             Select
         </button>
         <button 
+          onClick={() => props.deletePetCallback(props.id)}
           type="button" 
-          className="btn btn-danger pet-card--close-btn" 
-          aria-label="Close"
+          className="btn btn-danger pet-card--remove-btn" 
+          aria-label="remove"
         >
-          Close
+          Remove
         </button>
       </section>
       <section className="pet-card--body">
@@ -44,6 +45,8 @@ PetCard.propTypes = {
   species: PropTypes.string.isRequired, 
   about: PropTypes.string, 
   location: PropTypes.string,
+  deletePetCallback: PropTypes.func.isRequired,
+  selectPetCallback: PropTypes.func.isRequired,
 }
     
 export default PetCard;

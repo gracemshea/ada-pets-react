@@ -11,10 +11,10 @@ const PetDetails = (props) => {
   return (
     <section className="pet-details">
       <section className="pet-details--header">
-        <h2 className="petdetails--name">{speciesEmoji(species)} {name} {speciesEmoji(species)}</h2>
+        <h2 className="pet-details--name">{speciesEmoji(species)} {name} {speciesEmoji(species)}</h2>
         <img src={images[0]} alt={`${name}`} className="pet-details--image" />
       </section>
-      <article>
+      <article className="pet-details--content">
         <h3>About {name}</h3>
         <p>
           {about}
